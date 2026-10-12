@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Interaktif: Persamaan Dasar Akuntansi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 h-full flex flex-col">
+
+    <header class="bg-indigo-700 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3 mb-3 md:mb-0">
+                <div class="bg-indigo-600 p-2 rounded-xl border border-indigo-500 shadow-inner">
+                    <svg class="w-8 h-8 text-indigo-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight">Akuntansi Interaktif • Kelas XII Fase F</h1>
+                    <p class="text-xs text-indigo-200">Menganalisis & Mencatat Transaksi dalam Persamaan Dasar Akuntansi</p>
+                </div>
+            </div>
+            <nav class="flex flex-wrap gap-2 bg-indigo-800 p-1.5 rounded-xl border border-indigo-600">
+                <button onclick="switchTab('materi')" id="btn-materi" class="px-4 py-2 text-sm font-medium rounded-lg transition bg-white text-indigo-700 shadow">1. Konsep (Deep Learning)</button>
+                <button onclick="switchTab('simulator')" id="btn-simulator" class="px-4 py-2 text-sm font-medium rounded-lg transition text-indigo-200 hover:text-white hover:bg-indigo-700">2. Simulator Transaksi</button>
+                <button onclick="switchTab('kuis')" id="btn-kuis" class="px-4 py-2 text-sm font-medium rounded-lg transition text-indigo-200 hover:text-white hover:bg-indigo-700">3. Uji Pemahaman</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 overflow-y-auto">
+
+        <!-- TAB 1: MATERI & DEEP LEARNING -->
+        <section id="materi" class="tab-content active space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Fase F • Pendekatan Deep Learning</span>
+                <h2 class="text-2xl font-bold text-slate-900 mt-2 mb-4">Peta Konsep & Makna Fundamental Persamaan Dasar Akuntansi</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    Dalam pembelajaran mendalam (*deep learning*), kita tidak sekadar menghafal rumus, melainkan memahami esensi hubungan sebab-akibat antara sumber kekayaan perusahaan (aset) dengan hak atas kekayaan tersebut (liabilitas dan ekuitas).
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                    <div class="bg-blue-50 border border-blue-100 p-5 rounded-xl">
+                        <div class="text-blue-600 font-bold text-lg mb-2">1. Harta (Assets)</div>
+                        <p class="text-sm text-slate-600">Sumber daya ekonomi yang dikuasai perusahaan akibat peristiwa masa lalu yang diharapkan memberi manfaat ekonomi di masa depan (Kas, Piutang, Perlengkapan, Peralatan, dll).</p>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-100 p-5 rounded-xl">
+                        <div class="text-amber-600 font-bold text-lg mb-2">2. Utang (Liabilities)</div>
+                        <p class="text-sm text-slate-600">Kewajiban masa kini perusahaan yang timbul dari peristiwa masa lalu, penyelesaiannya diperkirakan mengakibatkan arus keluar sumber daya perusahaan.</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-100 p-5 rounded-xl">
+                        <div class="text-emerald-600 font-bold text-lg mb-2">3. Modal (Equity)</div>
+                        <p class="text-sm text-slate-600">Hak residual atas aset perusahaan setelah dikurangi semua liabilitas (Modal awal + Pendapatan - Beban - Prive).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Rumus Fundamental</h3>
+                <div class="bg-slate-900 text-white p-6 rounded-xl text-center font-mono text-xl md:text-2xl font-bold shadow-inner tracking-wide">
+                    HARTA = UTANG + MODAL
+                </div>
+                <p class="text-sm text-slate-500 text-center mt-3">Prinsip Keseimbangan (*Balance*) mutlak berlaku pada setiap transaksi keuangan.</p>
+            </div>
+            
+            <div class="flex justify-end">
+                <button onclick="switchTab('simulator')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded-xl shadow transition flex items-center space-x-2">
+                    <span>Lanjut ke Simulator Transaksi</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- TAB 2: SIMULATOR TRANSAKSI -->
+        <section id="simulator" class="tab-content space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Panel Input Transaksi -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 lg:col-span-1 space-y-4">
+                    <h3 class="text-lg font-bold text-slate-900">Pilih / Buat Transaksi Usaha</h3>
+                    <p class="text-xs text-slate-500">Pilih skenario transaksi di bawah atau buat sendiri untuk melihat dampaknya pada Persamaan Dasar Akuntansi.</p>
+                    
+                    <div class="space-y-3">
+                        <label class="block text-sm font-medium text-slate-700">Skenario Transaksi Cepat:</label>
+                        <select id="scenarioSelect" onchange="loadScenario()" class="w-full rounded-xl border border-slate-300 p-2.5 text-sm focus:ring-2 focus:ring-indigo-500">
+                            <option value="">-- Pilih Skenario Transaksi --</option>
+                            <option value="1">Setoran Modal Awal Kas Rp 50.000.000</option>
+                            <option value="2">Pembelian Peralatan secara Tunai Rp 10.000.000</option>
+                            <option value="3">Pembelian Perlengkapan secara Kredit Rp 3.000.000</option>
+                            <option value="4">Penerimaan Pendapatan Jasa Tunai Rp 5.000.000</option>
+                            <option value="5">Pembayaran Beban Gaji Karyawan Rp 2.000.000</option>
+                            <option value="6">Pengambilan Prive oleh Pemilik Rp 1.000.000</option>
+                        </select>
+                    </div>
+
+                    <div class="border-t border-slate-100 pt-4 space-y-3">
+                        <div class="font-medium text-sm text-slate-700">Form Analisis Mandiri:</div>
+                        <div>
+                            <label class="block text-xs text-slate-500 mb-1">Keterangan Transaksi</label>
+                            <input type="text" id="inputKet" placeholder="Contoh: Membeli perlengkapan..." class="w-full rounded-xl border border-slate-300 p-2 text-sm">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-xs text-slate-500 mb-1">Akun Terpengaruh 1</label>
+                                <select id="akun1" class="w-full rounded-xl border border-slate-300 p-2 text-sm">
+                                    <option value="kas">Kas</option>
+                                    <option value="piutang">Piutang Usaha</option>
+                                    <option value="perlengkapan">Perlengkapan</option>
+                                    <option value="peralatan">Peralatan</option>
+                                    <option value="utang">Utang Usaha</option>
+                                    <option value="modal">Modal</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-500 mb-1">Posisi & Nilai 1 (+/-)</label>
+                                <input type="number" id="val1" placeholder="5000000" class="w-full rounded-xl border border-slate-300 p-2 text-sm">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-xs text-slate-500 mb-1">Akun Terpengaruh 2 (Opsional)</label>
+                                <select id="akun2" class="w-full rounded-xl border border-slate-300 p-2 text-sm">
+                                    <option value="none">-- Tidak Ada --</option>
+                                    <option value="kas">Kas</option>
+                                    <option value="piutang">Piutang Usaha</option>
+                                    <option value="perlengkapan">Perlengkapan</option>
+                                    <option value="peralatan">Peralatan</option>
+                                    <option value="utang">Utang Usaha</option>
+                                    <option value="modal">Modal</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-500 mb-1">Posisi & Nilai 2 (+/-)</label>
+                                <input type="number" id="val2" placeholder="-5000000" class="w-full rounded-xl border border-slate-300 p-2 text-sm">
+                            </div>
+                        </div>
+                        <button onclick="tambahTransaksi()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 rounded-xl text-sm transition shadow">Catat Transaksi</button>
+                    </div>
+
+                    <div class="bg-amber-50 border border-amber-200 p-3 rounded-xl text-xs text-amber-800">
+                        <span class="font-bold">Tips Guru:</span> Perhatikan bahwa setiap transaksi selalu menjaga keseimbangan antara Sisi Kiri (Aset) dan Sisi Kanan (Liabilitas + Ekuitas).
+                    </div>
+                </div>
+
+                <!-- Tabel Persamaan Dasar Akuntansi -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 lg:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-slate-900">Tabel Persamaan Dasar Akuntansi</h3>
+                            <button onclick="resetData()" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg transition font-medium">Reset Data</button>
+                        </div>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-indigo-900 text-white text-center">
+                                        <th rowspan="2" class="p-2 border border-indigo-800">No / Ket</th>
+                                        <th colspan="4" class="p-2 border border-indigo-800">HARTA (ASSETS)</th>
+                                        <th class="p-2 border border-indigo-800">LIABILITAS</th>
+                                        <th colspan="2" class="p-2 border border-indigo-800">EKUITAS</th>
+                                        <th rowspan="2" class="p-2 border border-indigo-800">Keterangan</th>
+                                    </tr>
+                                    <tr class="bg-indigo-800 text-white text-center">
+                                        <th class="p-2 border border-indigo-700">Kas</th>
+                                        <th class="p-2 border border-indigo-700">Piutang</th>
+                                        <th class="p-2 border border-indigo-700">Perlengkapan</th>
+                                        <th class="p-2 border border-indigo-700">Peralatan</th>
+                                        <th class="p-2 border border-indigo-700">Utang Usaha</th>
+                                        <th class="p-2 border border-indigo-700">Modal</th>
+                                        <th class="p-2 border border-indigo-700">Pendapatan/Beban</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    <!-- Initial Balance Row (Zero) -->
+                                    <tr class="bg-slate-50 font-medium text-center">
+                                        <td class="p-2 border border-slate-200">Saldo Awal</td>
+                                        <td class="p-2 border border-slate-200">0</td>
+                                        <td class="p-2 border border-slate-200">0</td>
+                                        <td class="p-2 border border-slate-200">0</td>
+                                        <td class="p-2 border border-slate-200">0</td>
+                                        <td class="p-2 border border-slate-200">0</td>
+                                        <td class="p-2 border border-slate-200">0</td>
+                                        <td class="p-2 border border-slate-200">-</td>
+                                        <td class="p-2 border border-slate-200">Saldo Awal</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="bg-indigo-50 font-bold text-center text-indigo-900">
+                                        <td class="p-2 border border-indigo-200">SALDO AKHIR</td>
+                                        <td id="tot-kas" class="p-2 border border-indigo-200">0</td>
+                                        <td id="tot-piutang" class="p-2 border border-indigo-200">0</td>
+                                        <td id="tot-perlengkapan" class="p-2 border border-indigo-200">0</td>
+                                        <td id="tot-peralatan" class="p-2 border border-indigo-200">0</td>
+                                        <td id="tot-utang" class="p-2 border border-indigo-200">0</td>
+                                        <td id="tot-modal" class="p-2 border border-indigo-200">0</td>
+                                        <td id="tot-ket" class="p-2 border border-indigo-200">-</td>
+                                        <td class="p-2 border border-indigo-200">Balance</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-slate-50 p-4 rounded-xl border border-slate-200 flex justify-between items-center">
+                        <div>
+                            <div class="text-xs text-slate-500 font-medium">Verifikasi Keseimbangan Sifat Akuntansi:</div>
+                            <div id="statusBalance" class="text-sm font-bold text-emerald-600 mt-0.5">Status: Balance (Harta = Utang + Modal)</div>
+                        </div>
+                        <button onclick="switchTab('kuis')" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-xs font-medium transition">Uji Kuis Pemahaman</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: KUIS / UJI PEMAHAMAN -->
+        <section id="kuis" class="tab-content space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 max-w-3xl mx-auto">
+                <div class="flex justify-between items-center mb-6 border-b pb-4">
+                    <h3 class="text-xl font-bold text-slate-900">Evaluasi Pembelajaran Mendalam</h3>
+                    <span id="quizProgress" class="text-xs bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full font-semibold">Soal 1 dari 4</span>
+                </div>
+
+                <div id="quizContainer">
+                    <!-- Pertanyaan akan dirender via JavaScript -->
+                </div>
+
+                <div id="quizResult" class="hidden text-center py-8 space-y-4">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">🎉</div>
+                    <h4 class="text-2xl font-bold text-slate-900">Evaluasi Selesai!</h4>
+                    <p id="scoreText" class="text-slate-600"></p>
+                    <button onclick="resetQuiz()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-xl text-sm font-medium transition">Ulangi Kuis</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Navigasi Tab
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('header nav button').forEach(el => {
+                el.classList.remove('bg-white', 'text-indigo-700', 'shadow');
+                el.classList.add('text-indigo-200', 'hover:text-white', 'hover:bg-indigo-700');
+            });
+            
+            document.getElementById(tabId).classList.add('active');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if(activeBtn) {
+                activeBtn.classList.remove('text-indigo-200', 'hover:text-white', 'hover:bg-indigo-700');
+                activeBtn.classList.add('bg-white', 'text-indigo-700', 'shadow');
+            }
+        }
+
+        // State Simulator Persamaan Dasar Akuntansi
+        let transactions = [];
+        let totals = { kas: 0, piutang: 0, perlengkapan: 0, peralatan: 0, utang: 0, modal: 0 };
+
+        function formatRupiah(angka) {
+            if(angka === 0) return "0";
+            return angka.toLocaleString('id-ID');
+        }
+
+        function updateTable() {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            // Row Saldo Awal
+            let html = `<tr class="bg-slate-50 font-medium text-center">
+                <td class="p-2 border border-slate-200">Saldo Awal</td>
+                <td class="p-2 border border-slate-200">0</td>
+                <td class="p-2 border border-slate-200">0</td>
+                <td class="p-2 border border-slate-200">0</td>
+                <td class="p-2 border border-slate-200">0</td>
+                <td class="p-2 border border-slate-200">0</td>
+                <td class="p-2 border border-slate-200">0</td>
+                <td class="p-2 border border-slate-200">-</td>
+                <td class="p-2 border border-slate-200">Saldo Awal</td>
+            </tr>`;
+
+            totals = { kas: 0, piutang: 0, perlengkapan: 0, peralatan: 0, utang: 0, modal: 0 };
+
+            transactions.forEach((t, idx) => {
+                if(t.akun1) totals[t.akun1] += t.val1;
+                if(t.akun2 && t.akun2 !== 'none') totals[t.akun2] += t.val2;
+
+                html += `<tr class="text-center hover:bg-slate-50">
+                    <td class="p-2 border border-slate-200 font-semibold">${idx + 1}</td>
+                    <td class="p-2 border border-slate-200">${t.akun1 === 'kas' ? formatRupiah(t.val1) : (t.akun2 === 'kas' ? formatRupiah(t.val2) : '')}</td>
+                    <td class="p-2 border border-slate-200">${t.akun1 === 'piutang' ? formatRupiah(t.val1) : (t.akun2 === 'piutang' ? formatRupiah(t.val2) : '')}</td>
+                    <td class="p-2 border border-slate-200">${t.akun1 === 'perlengkapan' ? formatRupiah(t.val1) : (t.akun2 === 'perlengkapan' ? formatRupiah(t.val2) : '')}</td>
+                    <td class="p-2 border border-slate-200">${t.akun1 === 'peralatan' ? formatRupiah(t.val1) : (t.akun2 === 'peralatan' ? formatRupiah(t.val2) : '')}</td>
+                    <td class="p-2 border border-slate-200">${t.akun1 === 'utang' ? formatRupiah(t.val1) : (t.akun2 === 'utang' ? formatRupiah(t.val2) : '')}</td>
+                    <td class="p-2 border border-slate-200">${t.akun1 === 'modal' ? formatRupiah(t.val1) : (t.akun2 === 'modal' ? formatRupiah(t.val2) : '')}</td>
+                    <td class="p-2 border border-slate-200 text-slate-500">${t.ketKategori || '-'}</td>
+                    <td class="p-2 border border-slate-200 text-left">${t.ket}</td>
+                </tr>`;
+            });
+
+            tbody.innerHTML = html;
+
+            // Update Totals
+            document.getElementById('tot-kas').innerText = formatRupiah(totals.kas);
+            document.getElementById('tot-piutang').innerText = formatRupiah(totals.piutang);
+            document.getElementById('tot-perlengkapan').innerText = formatRupiah(totals.perlengkapan);
+            document.getElementById('tot-peralatan').innerText = formatRupiah(totals.peralatan);
+            document.getElementById('tot-utang').innerText = formatRupiah(totals.utang);
+            document.getElementById('tot-modal').innerText = formatRupiah(totals.modal);
+
+            // Check Balance: Harta (Kas + Piutang + Perlengkapan + Peralatan) = Utang + Modal
+            let totalHarta = totals.kas + totals.piutang + totals.perlengkapan + totals.peralatan;
+            let totalPasiva = totals.utang + totals.modal;
+
+            const statusEl = document.getElementById('statusBalance');
+            if(totalHarta === totalPasiva) {
+                statusEl.innerHTML = `Status: <span class="text-emerald-600 font-bold">BALANCE (Rp ${formatRupiah(totalHarta)} = Rp ${formatRupiah(totalPasiva)})</span>`;
+            } else {
+                statusEl.innerHTML = `Status: <span class="text-red-600 font-bold">TIDAK BALANCE! (Harta: ${formatRupiah(totalHarta)} vs Pasiva: ${formatRupiah(totalPasiva)})</span>`;
+            }
+        }
+
+        function loadScenario() {
+            const val = document.getElementById('scenarioSelect').value;
+            if(!val) return;
+
+            let trans = {};
+            if(val === '1') {
+                trans = { ket: 'Investasi awal pemilik berupa Kas', akun1: 'kas', val1: 50000000, akun2: 'modal', val2: 50000000, ketKategori: 'Modal Awal' };
+            } else if(val === '2') {
+                trans = { ket: 'Membeli peralatan kantor secara tunai', akun1: 'peralatan', val1: 10000000, akun2: 'kas', val2: -10000000, ketKategori: 'Pembelian Aset' };
+            } else if(val === '3') {
+                trans = { ket: 'Membeli perlengkapan secara kredit', akun1: 'perlengkapan', val1: 3000000, akun2: 'utang', val2: 3000000, ketKategori: 'Pembelian Kredit' };
+            } else if(val === '4') {
+                trans = { ket: 'Menerima pendapatan jasa secara tunai', akun1: 'kas', val1: 5000000, akun2: 'modal', val2: 5000000, ketKategori: 'Pendapatan' };
+            } else if(val === '5') {
+                trans = { ket: 'Membayar beban gaji karyawan', akun1: 'kas', val1: -2000000, akun2: 'modal', val2: -2000000, ketKategori: 'Beban Gaji' };
+            } else if(val === '6') {
+                trans = { ket: 'Pemilik mengambil uang untuk keperluan pribadi (Prive)', akun1: 'kas', val1: -1000000, akun2: 'modal', val2: -1000000, ketKategori: 'Prive' };
+            }
+
+            transactions.push(trans);
+            updateTable();
+            document.getElementById('scenarioSelect').value = "";
+        }
+
+        function tambahTransaksi() {
+            const ket = document.getElementById('inputKet').value;
+            const akun1 = document.getElementById('akun1').value;
+            const val1 = parseFloat(document.getElementById('inputVal1') || document.getElementById('val1').value) || 0;
+            const akun2 = document.getElementById('akun2').value;
+            const val2 = parseFloat(document.getElementById('val2').value) || 0;
+
+            if(!ket) {
+                alert("Harap masukkan keterangan transaksi!");
+                return;
+            }
+
+            transactions.push({
+                ket: ket,
+                akun1: akun1,
+                val1: val1,
+                akun2: akun2 === 'none' ? null : akun2,
+                val2: val2,
+                ketKategori: 'Manual'
+            });
+
+            updateTable();
+            // Clear inputs
+            document.getElementById('inputKet').value = '';
+            document.getElementById('val1').value = '';
+            document.getElementById('val2').value = '';
+        }
+
+        function resetData() {
+            transactions = [];
+            updateTable();
+        }
+
+        // Data Kuis / Uji Pemahaman
+        const quizData = [
+            {
+                question: "Jika sebuah perusahaan membayar beban sewa kantor secara tunai sebesar Rp 2.000.000, bagaimana pengaruhnya terhadap Persamaan Dasar Akuntansi?",
+                options: [
+                    "Kas bertambah Rp 2.000.000 dan Utang bertambah Rp 2.000.000",
+                    "Kas berkurang Rp 2.000.000 dan Modal berkurang Rp 2.000.000",
+                    "Peralatan bertambah Rp 2.000.000 dan Kas berkurang Rp 2.000.000",
+                    "Modal bertambah Rp 2.000.000 dan Kas bertambah Rp 2.000.000"
+                ],
+                correct: 1,
+                explanation: "Pembayaran beban mengurangi kas (karena uang keluar) dan mengurangi ekuitas/modal karena beban mengurangi laba."
+            },
+            {
+                question: "Pembelian perlengkapan kantor secara kredit seharga Rp 1.500.000 akan dicatat sebagai...",
+                options: [
+                    "Perlengkapan (+) Rp 1.500.000 dan Kas (-) Rp 1.500.000",
+                    "Perlengkapan (+) Rp 1.500.000 dan Utang Usaha (+) Rp 1.500.000",
+                    "Peralatan (+) Rp 1.500.000 dan Modal (+) Rp 1.500.000",
+                    "Kas (+) Rp 1.500.000 dan Utang (+) Rp 1.500.000"
+                ],
+                correct: 1,
+                explanation: "Karena dibeli secara kredit, aset perlengkapan bertambah dan timbul kewajiban (utang usaha) bertambah."
+            },
+            {
+                question: "Prinsip utama yang harus selalu terpenuhi dalam setiap pencatatan Persamaan Dasar Akuntansi adalah...",
+                options: [
+                    "Harta = Utang + Modal",
+                    "Pendapatan = Beban",
+                    "Kas = Modal - Prive",
+                    "Total Debit = Total Kredit"
+                ],
+                correct: 0,
+                explanation: "Harta = Utang + Modal merupakan persamaan fundamental yang mencerminkan keseimbangan kekayaan dan hak kepemilikan."
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let score = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quizContainer');
+            const progress = document.getElementById('quizProgress');
+            
+            if(currentQuizIndex >= quizData.length) {
+                document.getElementById('quizContainer').classList.add('hidden');
+                document.getElementById('quizResult').classList.remove('hidden');
+                progress.innerText = "Selesai";
+                document.getElementById('scoreText').innerText = `Skor Anda: ${score} dari ${quizData.length} benar. Kerja bagus!`;
+                if(score === quizData.length) {
+                    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+                }
+                return;
+            }
+
+            progress.innerText = `Soal ${currentQuizIndex + 1} dari ${quizData.length}`;
+            const q = quizData[currentQuizIndex];
+            
+            let html = `
+                <div class="space-y-4">
+                    <h4 class="font-bold text-slate-900 text-lg">${q.question}</h4>
+                    <div class="space-y-2">
+            `;
+
+            q.options.forEach((opt, idx) => {
+                html += `<button onclick="checkAnswer(${idx})" class="w-full text-left p-3.5 rounded-xl border border-slate-200 hover:border-indigo-500 hover:bg-indigo-50/50 transition text-sm font-medium text-slate-700">${String.fromCharCode(65 + idx)}. ${opt}</button>`;
+            });
+
+            html += `</div></div>`;
+            container.innerHTML = html;
+        }
+
+        function checkAnswer(selectedIdx) {
+            const q = quizData[currentQuizIndex];
+            if(selectedIdx === q.correct) {
+                score++;
+                alert("Jawaban Benar! " + q.explanation);
+            } else {
+                alert("Jawaban Kurang Tepat. " + q.explanation);
+            }
+            currentQuizIndex++;
+            renderQuiz();
+        }
+
+        function resetQuiz() {
+            currentQuizIndex = 0;
+            score = 0;
+            document.getElementById('quizContainer').classList.remove('hidden');
+            document.getElementById('quizResult').classList.add('hidden');
+            renderQuiz();
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            updateTable();
+            renderQuiz();
+        };
+    </script>
+
+</body>
+</html>
